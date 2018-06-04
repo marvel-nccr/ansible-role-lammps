@@ -1,4 +1,4 @@
 ---
-lammps_root_dir: "{{ i_pi_code_folder}}/lammps"
+lammps_root_dir: "{{ lammps_code_folder}}/lammps"
 
 root_user: "root"
