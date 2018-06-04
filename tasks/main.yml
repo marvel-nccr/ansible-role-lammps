@@ -1,2 +1,28 @@
 ---
+- name: Install LAMMPS dependencies
+  become: true
+  become_user: "{{ root_user }}"
+  apt:
+      name: "{{ item }}"
+      state: latest
+  with_items:
+    - build-essential
+    - gfortran
+    - gcc
+    - libblas-dev 
+    - liblapack-dev
+    - openmpi-bin
+
+- name: Get LAMMPS from github
+  git:
+     repo: https://github.com/lammps/lammps.git
+     dest: "{{ lammps_root_dir}}"
+
+
+- name: Make LAMMPS
+  shell: "make yes-CLASS2 yes-KSPACE yes-MANYBODY yes-MISC yes-MOLECULE yes-REPLICA yes-RIGID yes-USER-MISC; make serial"
+  args:
+    chdir: "{{ lammps_root_dir }}/src/"
+    creates: "{{ lammps_root_dir }}/src/lmp_serial"
+
 
