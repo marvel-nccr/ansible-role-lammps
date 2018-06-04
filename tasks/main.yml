@@ -34,3 +34,8 @@
       - yes-USER-MISC
       - serial
 
+- name: "Put a line in ~/.profile to add LAMMPS to the path"
+  lineinfile:
+    path: "${HOME}/.profile"
+    line: "export PATH=${PATH}:{{ lammps_root_dir }}/src/"
+
