@@ -1,4 +1,5 @@
 ---
+lammps_code_folder: "${HOME}"
 lammps_root_dir: "{{ lammps_code_folder}}/lammps"
 
 root_user: "root"
