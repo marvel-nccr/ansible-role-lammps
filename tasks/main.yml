@@ -17,6 +17,7 @@
   git:
      repo: https://github.com/lammps/lammps.git
      dest: "{{ lammps_root_dir}}"
+  register: git_checkout
 
 
 - name: Make LAMMPS
@@ -33,6 +34,7 @@
       - yes-RIGID
       - yes-USER-MISC
       - serial
+  when: git_checkout.changed
 
 - name: "Put a line in ~/.profile to add LAMMPS to the path"
   lineinfile:
