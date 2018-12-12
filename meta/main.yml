@@ -1,19 +1,18 @@
 ---
-allow_duplicates: no
+allow_duplicates: false
 
 galaxy_info:
+  role_name: lammps
   author: "MARVEL NCCR"
   description: "An ansible role that installs [LAMMPS](http://lammps.sandia.gov/) on Ubuntu."
   license: MIT
-  min_ansible_version: 2.5
+  min_ansible_version: 2.7
   platforms:
     - name: Ubuntu
       versions:
-      - xenial
-      - bionic
+        - xenial
+        - bionic
   galaxy_tags:
     - ubuntu
     - application
     - science
-
-dependencies:
