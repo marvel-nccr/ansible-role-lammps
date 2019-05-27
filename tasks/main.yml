@@ -3,14 +3,13 @@
   become: true
   become_user: "{{ root_user }}"
   apt:
-    name: "{{ item }}"
-  with_items:
-    - build-essential
-    - gfortran
-    - gcc
-    - libblas-dev
-    - liblapack-dev
-    - openmpi-bin
+    name:
+      - build-essential
+      - gfortran
+      - gcc
+      - libblas-dev
+      - liblapack-dev
+      - openmpi-bin
 
 - name: Get LAMMPS from github
   git:
