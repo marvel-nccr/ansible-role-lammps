@@ -16,6 +16,7 @@
     repo: https://github.com/lammps/lammps.git
     dest: "{{ lammps_root_dir }}"
     version: "{{ lammps_version }}"
+    depth: 1
   register: git_checkout
 
 - name: Make LAMMPS
