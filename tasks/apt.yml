@@ -1,0 +1,13 @@
+---
+- name: add lammps repo
+  become: true
+  apt_repository:
+    repo: ppa:gladky-anton/lammps
+
+- name: install lammps
+  become: true
+  apt:
+    name:
+      - lammps
+    state: present
+    update_cache: true
