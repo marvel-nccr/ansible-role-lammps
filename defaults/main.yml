@@ -1,6 +1,5 @@
 ---
 lammps_version: "stable_12Dec2018"
-lammps_code_folder: "${HOME}"
-lammps_root_dir: "{{ lammps_code_folder}}/lammps"
 
-root_user: "root"
+lammps_code_folder: "/tmp"
+lammps_root_dir: "{{ lammps_code_folder}}/lammps"
